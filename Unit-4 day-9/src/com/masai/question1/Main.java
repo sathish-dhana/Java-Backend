@@ -10,41 +10,34 @@ public class Main {
 
         System.out.println("Enter num1");
         int num1 = 0;
-
+        int num2 = 0;
+        int num3 = 0;
+        String message = null;
         try {
             num1 = sc.nextInt();
-        } catch (InputMismatchException ie) {
-            System.out.println("Please enter valid number");
-        }
-
-        System.out.println("Enter num2");
-        int num2 = 0;
-
-        try {
-            num2 = sc.nextInt();
-        } catch (InputMismatchException ie) {
-            System.out.println("Please enter valid number");
-        }
-
-        String message = null;
-        int num3 = 0;
-        try {
-            num3 = num1 / num2;
-        } catch (ArithmeticException ae) {
-            System.out.println("num2 should not be 0");
-        }
-
-
-
-
-        try{
-            if(num3 > 10){
-                message = "Welcome to Exception Handling ";
+            try {
+                System.out.println("Enter num2");
+                num2 = sc.nextInt();
+                try {
+                    num3 = num1 / num2;
+                    try{
+                        if(num3 > 10){
+                            message = "Welcome to Exception Handling ";
+                        }
+                        System.out.println("Message is :"+message.toUpperCase());
+                    } catch (Exception ee) {
+                        System.out.println("String value is null");
+                    }
+                } catch (ArithmeticException ae) {
+                    System.out.println("num2 should not be 0");
+                }
+            } catch (InputMismatchException ie) {
+                System.out.println("Please enter valid number");
             }
-            System.out.println("Message is :"+message.toUpperCase());
-        } catch (Exception ee) {
-            System.out.println("String value is null");
+        } catch (InputMismatchException ie) {
+            System.out.println("Please enter valid number");
         }
+
         System.out.println("end of main");
     }
 }
