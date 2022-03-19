@@ -8,34 +8,41 @@ import java.util.TreeSet;
 
 public class Main  {
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
         PriceComparator pc = new PriceComparator();
-        TreeSet<Product> treeSet = new TreeSet<>(pc);
+        IdComparator ic = new IdComparator();
+        NameComparator nc = new NameComparator();
+        System.out.println("Enter (1 - price sort), (2 - product sort) (3 - id sort)");
+        int choice = sc.nextInt();
+        TreeSet<Product> treeSet;
+        if (choice == 1) {
+            treeSet = new TreeSet<>(pc);
+        } else if (choice == 2) {
+            treeSet = new TreeSet<>(nc);
+        } else {
+            treeSet = new TreeSet<>(ic);
+        }
 
-        treeSet.add(new Product(101, "table", 500.00));
-        treeSet.add(new Product(102, "table1", 400.00));
-        treeSet.add(new Product(103, "table2", 600.00));
-        treeSet.add(new Product(104, "table3", 200.00));
+        boolean flag = true;
 
+        while(flag) {
+            System.out.println("Enter product id");
+            int proid = sc.nextInt();
 
-//        boolean flag = true;
-//        Scanner sc = new Scanner(System.in);
-//        while(flag) {
-//            System.out.println("Enter product id");
-//            int proid = sc.nextInt();
-//            System.out.println("Enter product name");
-//            String proName = sc.next();
-//            System.out.println("Enter product price");
-//            double price = sc.nextDouble();
-//
-//            System.out.println(treeSet.add(new Product(proid, proName, price)));
-//
-//            System.out.println("do you want to continue? (y/n)");
-//            String check = sc.next();
-//            if (check.equalsIgnoreCase("n")) {
-//                flag = false;
-//            }
-//        }
+            System.out.println("Enter product name");
+            String proName = sc.next();
+
+            System.out.println("Enter product price");
+            double price = sc.nextDouble();
+
+            treeSet.add(new Product(proid, proName, price));
+
+            System.out.println("do you want to continue? (y/n)");
+            String check = sc.next();
+            if (check.equalsIgnoreCase("n")) {
+                flag = false;
+            }
+        }
 
 
         System.out.println(treeSet.size());
