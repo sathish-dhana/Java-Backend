@@ -23,7 +23,18 @@ public class Main {
     /*finally is provided in try catch block at last to execute
     no matter what happens, it always runs except like System.out & errors like memory error
     */
-    public static void main(String[] args) {
-        Employee emp = new Employee();
+    public static void main(String[] args) throws UnderAge {
+        int age = 17;
+        if (age > 18) {
+            System.out.println("you are elligible");
+        } else throw new UnderAge("this is checked exception");
+
+        try {
+            int b = 18/0;
+        } catch (ArithmeticException ae) {
+            System.out.println("this is unchecked exception");
+        }
+
+
     }
 }
