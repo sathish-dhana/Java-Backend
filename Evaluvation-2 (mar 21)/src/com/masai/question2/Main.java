@@ -1,5 +1,7 @@
 package com.masai.question2;
 
+import com.masai.question3.Employee;
+
 public class Main {
     // question 1 //
     // both checked & unchecked occurs only at Runtime//
@@ -21,4 +23,7 @@ public class Main {
     /*finally is provided in try catch block at last to execute
     no matter what happens, it always runs except like System.out & errors like memory error
     */
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+    }
 }
