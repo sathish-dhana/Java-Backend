@@ -1,0 +1,85 @@
+﻿
+Syntax
+
+Problem - 1 : 
+
+create database exam;
+
+use exam;
+
+create table students(ID int primary key, Name varchar(30));
+
+create table friends (ID int, friend_ID int, primary key(ID), foreign key (friend_ID) references students(ID));
+
+create table packages(ID int primary key, salary double, foreign key (ID) references students(ID));
+
+insert into students values(1,"ashley");
+insert into students values(2,"samantha");
+insert into students values(3,"julia");
+insert into students values(4,"scarlet");
+
+insert into friends values(1, 2);
+insert into friends values(2, 3);
+insert into friends values(3, 4);
+insert into friends values(4, 1);
+
+insert into packages values (1, 15.20);
+insert into packages values (2, 10.06);
+insert into packages values (3, 11.55);
+insert into packages values (4, 12.12);
+
+select students.Name as higher_package_students, friends.friend_ID from students join friends on students.ID = friends.ID where (select salary from packages where ID = students.ID) >  (select salary from packages where friends.friend_ID = students.ID);
+
+
+
+problem 2:
+ 
+ 3NF :
+ 	* NF nf is normalization form, we are doing normalization to  eliminate data redundency in our 
+ 	 table. 
+ 	* It increases performance while manipulating data present in table;
+ 	* Also helps in seggregating the data.
+
+ 	Rule :
+
+ 	* to perform 3NF the table should be in 2NF.
+ 	* there should not be any transitive dependency of non primary key on super key.
+
+ 	Before table:
+
+ 	schema :-  id int, totalMark int, prize varchar(30)
+
+ 	After table:
+
+ 	schema (1st table) :-  id int, totalMark int
+ 	schema (1st table) :-  id int, prize varchar(30)
+
+
+problem 3: 
+	ACID properties : 
+
+	Transaction is a servise provided by the Entity Factory Manager, using transaction we can bind queries that are to be excecuted at same time. (for example, credit and debit) both action should be inside transaction to avoid anomaly. transaction should have following properties,
+
+	* Atomic - transaction is atomic, queries inside it act toghether as a single unit and excecute simultaneously when it is commited.
+
+	* consistant - it should be consistant at after the end of the transaction.
+
+	* Isolated - it should not be interdependant, queries inside transaction should be isolated it should not depend upon any other query or transaction.
+
+	* Durable - it should be durable, after firing the query there should not be any anomaly in the future while manupulating.
+
+
+
+Problem 4:
+
+create table person(id int primary key, lastName varchar(30), firstName varchar(30));
+
+create table Address(addressId int primary key, personId int, city varchar(20), state varchar(20));
+
+insert into person values(1, "wang", "allen");
+insert into person values(2, "alice", "bob");
+
+insert into Address values(1, 2, "New york city", "New york");
+insert into Address values(2, 3, "Leetcode", "Clifornia");
+
+select person.firstName, person.lastName, Address.city, Address.state from person left join Address on person.id = Address.personId;
