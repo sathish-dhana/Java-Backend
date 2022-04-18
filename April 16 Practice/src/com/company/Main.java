@@ -6,17 +6,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Set<Student> hs = new TreeSet<>(new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return 0;
-            }
-        });
+        Map<Integer, String> hm = new TreeMap<>();
+    
+        hm.put(1, null);
+        hm.put(1, "dhana");
+        hm.put(2, "dhana1");
+        hm.put(3, "dhana2");
+        hm.put(4, null);
+        hm.put(1, null);
 
-        hs.add(new Student(1, "dhana", 500));
-        hs.add(new Student(1, "dhana", 500));
-        hs.add(new Student(2, "raj", 5000));
-
-        System.out.println(hs);
+        for (Map.Entry<Integer, String> x : hm.entrySet()) {
+            System.out.println(x);
+        }
     }
 }
