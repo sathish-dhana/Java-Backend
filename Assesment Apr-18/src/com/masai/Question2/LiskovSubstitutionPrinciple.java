@@ -8,10 +8,6 @@ public class LiskovSubstitutionPrinciple {
      * makes our code reusable, because we can use the codes written in parent class.
      * this makes our application loosely coupled with one another.
      * it gives flexibility to our application.
-     Example :-
-     out collection framework
-     List<Integer> list = new ArrayList<Integer>();
-     we can change arraylist with other classes of the same interface.
      */
     public static void main(String[] args) {
 
@@ -20,5 +16,9 @@ public class LiskovSubstitutionPrinciple {
 
         MyList list1 = new MyLinkedList();
         list1.add(2, 3);
+
+        MyList name = new MyListWithoutDuplicate();
+
+
     }
 }

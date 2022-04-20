@@ -1,5 +1,7 @@
 package com.masai.Question2;
 
-public interface MyList {
-    abstract public void add(int x, int y);
+public class MyList {
+    public void add(int x, int y) {
+        System.out.println("Added by List class : " + (x+y));
+    }
 }
