@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- <bean id="triangle" class="com.masai.Question1.Triangle"/>
+	<bean id="circle" class="com.masai.Question1.Circle"/>
+	<bean id="cylinder" class="com.masai.Question1.Cylinder"/> -->
+	
+	<!-- <bean id="service" class="com.masai.Question2.ServiceLayer"/>
+	
+	<bean id="presentation" class="com.masai.Question2.PresentationLayer">
+		<property name="service" ref="service"/>
+	</bean> -->
+	
+	<bean id="aclass" class="com.masai.Question3.Aclass" init-method="setup" destroy-method="destroy">
+		<property name="message" value="dhanasekar created this"></property>
+	</bean>
+</beans>

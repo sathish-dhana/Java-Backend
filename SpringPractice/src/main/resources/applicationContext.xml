@@ -6,15 +6,10 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="db" class="com.masai1.DAOBean" />
-	
-	<bean id="sb" class="com.masai1.ServiceBean" >
-	<property name="dao" ref="db"/>
+	<bean id="a1" class="com.masai2.A" init-method="mySetup" destroy-method="Destroy" lazy-init="true" scope="prototype"> 
+		<property name="message" value="Welcome to Spring.."></property>
 	</bean>
-	
-	<bean id="pb" class="com.masai1.PresentationBean" >
-	<property name="service" ref="sb"/>
-	</bean>
+		
 	
 
 </beans>
