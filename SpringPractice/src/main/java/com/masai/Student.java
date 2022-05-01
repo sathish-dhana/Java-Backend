@@ -1,5 +1,5 @@
 package com.masai;
 
-public interface Vehicle {
+public interface Student {
 	public void go();
 }

@@ -3,13 +3,13 @@ package com.masai;
 public class Travel {
 	
 	//it is the dependency (object type)
-	Vehicle v;
+	Student v;
 	
 	//simple type
 //	int numberOFPerson;
 	
 	//setter injection point for numberOfPerson
-	public Travel(Vehicle v) {
+	public Travel(Student v) {
 		this.v = v;
 	}
 	

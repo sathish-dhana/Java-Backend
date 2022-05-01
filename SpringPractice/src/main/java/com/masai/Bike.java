@@ -1,6 +1,6 @@
 package com.masai;
 
-class Bike implements Vehicle{
+class Bike implements Student{
 	
 	public void ride() {
 		System.out.println("bike ride started....");
