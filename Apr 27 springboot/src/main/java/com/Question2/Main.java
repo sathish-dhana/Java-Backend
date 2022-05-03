@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 	public static void main(String[] args) {
 		
-		ApplicationContext ap = new AnnotationConfigApplicationContext(AppConfig.class);
+//		ApplicationContext ap = new AnnotationConfigApplicationContext(AppConfig.class);
 		
 //		StudentService vs = ap.getBean(StudentService.class);
 //		
@@ -14,7 +14,7 @@ public class Main {
 //		
 //		aa.close();
 		
-		Cities c = ap.getBean(Cities.class);
-		c.print();
+//		Cities c = ap.getBean(Cities.class);
+//		c.print();
 	}
 }
